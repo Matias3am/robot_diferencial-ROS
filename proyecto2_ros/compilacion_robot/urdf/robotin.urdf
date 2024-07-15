@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="robotin">
+    <!-- Caja base del robot -->
     <link name="base_link">
         <visual>
             <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
@@ -18,6 +19,7 @@
         </collision>
     </link>
 
+    <!-- Rueda derecha del robot -->
     <link name="rueda_derecha">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -36,6 +38,7 @@
         </collision>
     </link>
 
+    <!-- Rueda izquierda del robot -->
     <link name="rueda_izquierda">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -54,6 +57,7 @@
         </collision>
     </link>
 
+    <!-- Rueda derecha delantera del robot -->
     <link name="rueda_derecha_delantera">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -72,6 +76,7 @@
         </collision>
     </link>
 
+    <!-- Rueda delantera izquierda -->
     <link name="rueda_izquierda_delantera">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -89,6 +94,8 @@
             </geometry>
         </collision>
     </link>
+
+    <!-- Joints de las ruedas -->
 
     <joint name="rueda_izquierda_joint" type="continuous">
         <origin xyz="0.23 -0.2 0.095" rpy="0.0 0.0 0.0"/>
