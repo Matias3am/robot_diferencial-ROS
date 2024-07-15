@@ -2,7 +2,7 @@
 ```
 Asignatura: Programación de robots con ROS
 
-Integrantes: Pedro Díaz Herrera, Matias Gonzalez Belmar, Matias Marin
+Integrantes: Matias Gonzalez Belmar, Pedro Díaz Herrera, Matias Marin
 
 Profesor: Sebastián Guajardo
 ```
@@ -96,3 +96,10 @@ anything else : stop
 
 CTRL-C to quit
 ```
+Solamente te queda explorar y probar el robot :) 
+
+Aquí algunos tests que realizamos:
+
+![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-41-50.png)
+
+![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-43-47.png)
