@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+    <!-- Joint del sensor -->
     <joint name="laser_joint" type="fixed">
         <parent link="base_link"/>
         <child link="laser_frame"/>
         <origin xyz="0.0 0 0.265" rpy="0 0 0"/>
     </joint>
 
+    <!-- Forma del sensor -->
     <link name="laser_frame">
         <visual>
             <geometry>
@@ -22,9 +24,10 @@
         <xacro:cylinder_inertia m="0.1" r="0.04" h="0.05"/>    
     </link>
 
+    <!-- Color para el sensor -->
     <gazebo reference="laser_frame">
         <material>Gazebo/PurpleGlow</material>
-
+        <!-- Propiedades del sensor -->
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
