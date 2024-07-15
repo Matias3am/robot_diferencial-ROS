@@ -1,5 +1,7 @@
 # robot_diferencial-ROS
 
+proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura desde 2024-07-15 18-43-10.png
+
 ## _**REQUISITOS**_ 
 * Python
 * ROS2 / IRON
