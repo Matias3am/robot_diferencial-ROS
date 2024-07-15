@@ -1,6 +1,6 @@
 # robot_diferencial-ROS
 
-## REQUISITOS 
+## _ ** REQUISITOS ** _ 
 - Python
 * ROS2 / IRON
 * RVIZ
