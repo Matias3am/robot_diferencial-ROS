@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <robot name="robotin" xmlns:xacro="http://ros.org/wiki/xacro" >
 
-
+    <!-- Importamos los diferentes archivos xacro para modularizar el código -->
     <xacro:include filename="propiedades_xacro.urdf"/>
     <xacro:include filename="ruedas_xacro.urdf"/>
     <xacro:include filename="camara.urdf"/>
     <xacro:include filename="lidar.urdf"/>
 
+    <!-- Caja base del robot con xacros -->
     <link name="base_link">
         <visual>
             <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
@@ -27,6 +28,7 @@
         <xacro:box_inertia m="7" w="${cuerpo_ancho}" d="${cuerpo_largo}" h="${cuerpo_alto}"/>
     </link>
 
+    <!-- Skin de gazebo para la caja : color -->
     <gazebo reference="base_link">
         <material>Gazebo/BlueLaser</material>
     </gazebo>
