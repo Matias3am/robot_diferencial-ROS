@@ -15,7 +15,7 @@
     <xacro:property name="posicion_2" value="0.2"/>
     <xacro:property name="posicion_3" value="0.095"/>
 
-    <!-- Define intertial property macros  -->
+    <!-- Inercia de una caja  -->
     <xacro:macro name="box_inertia" params="m w h d">
         <inertial>
         <origin xyz="0 0 0" rpy="${pi/2} 0 ${pi/2}"/>
@@ -24,6 +24,7 @@
         </inertial>
     </xacro:macro>
 
+    <!-- Inercia de un cilindro -->
     <xacro:macro name="cylinder_inertia" params="m r h">
         <inertial>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0" />
@@ -32,6 +33,7 @@
         </inertial>
     </xacro:macro>
 
+    <!-- Inercia de una esfera -->
     <xacro:macro name="sphere_inertia" params="m r">
         <inertial>
         <mass value="${m}"/>
