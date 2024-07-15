@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+    <!-- Joint de la cámara -->
     <joint name="camera_joint" type="fixed">
         <parent link="base_link"/>
         <child link="camera_link"/>
         <origin xyz="0 -0.4 0.14" rpy="0 ${pi} 1.55"/>
     </joint>
 
+    <!-- Forma de la cámara -->
     <link name="camera_link">
         <visual>
             <geometry>
@@ -16,9 +18,10 @@
         </visual>
     </link>
 
+    <!-- Color para la cámara -->
     <gazebo reference="camera_link">
         <material>Gazebo/Red</material>
-
+        <!-- Propiedades / plugin -->
         <sensor name="camera" type="camera">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
