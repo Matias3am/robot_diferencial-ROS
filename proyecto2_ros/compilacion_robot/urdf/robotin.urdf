@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<robot name="robotin">
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.8 0.15"/>
+            </geometry>
+            <material name="base_color">
+                <color rgba="0.1 0.6 0.4 0.8"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.8 0.15"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rueda_derecha">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.05"/>
+            </geometry>
+            <material name="color_rueda_derecha">
+                <color rgba="0.5 0.0 0.2 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.045" length="0.5"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rueda_izquierda">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.05"/>
+            </geometry>
+            <material name="color_rueda_izquierda">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.045" length="0.5"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rueda_derecha_delantera">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.05"/>
+            </geometry>
+            <material name="color_rueda_derecha_delantera">
+                <color rgba="0.5 0.0 0.2 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.045" length="0.5"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rueda_izquierda_delantera">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.05"/>
+            </geometry>
+            <material name="color_rueda_izquierda_delantera">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="0.045" length="0.5"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="rueda_izquierda_joint" type="continuous">
+        <origin xyz="0.23 -0.2 0.095" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_izquierda"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="rueda_derecha_joint" type="continuous">
+        <origin xyz="-0.23 -0.2 0.095" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_derecha"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>    
+
+    <joint name="rueda_derecha_delantera_joint" type="continuous">
+        <origin xyz="-0.23 0.2 0.095" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_derecha_delantera"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="rueda_izquierda_delantera_joint" type="continuous">
+        <origin xyz="0.23 0.2 0.095" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_izquierda_delantera"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+</robot>

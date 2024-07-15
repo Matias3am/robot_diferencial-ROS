@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot name="robotin" xmlns:xacro="http://ros.org/wiki/xacro" >
+
+
+    <xacro:include filename="propiedades_xacro.urdf"/>
+    <xacro:include filename="ruedas_xacro.urdf"/>
+    <xacro:include filename="camara.urdf"/>
+    <xacro:include filename="lidar.urdf"/>
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${cuerpo_ancho} ${cuerpo_largo} ${cuerpo_alto}"/>
+            </geometry>
+            <material name="base_color">
+                <color rgba="0.1 0.6 0.4 0.8"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${cuerpo_ancho} ${cuerpo_largo} ${cuerpo_alto}"/>
+            </geometry>
+        </collision>
+
+        <xacro:box_inertia m="7" w="${cuerpo_ancho}" d="${cuerpo_largo}" h="${cuerpo_alto}"/>
+    </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/BlueLaser</material>
+    </gazebo>
+
+
+</robot>

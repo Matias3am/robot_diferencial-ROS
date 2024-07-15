@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <link name="rueda_derecha">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+            <material name="color_rueda_derecha">
+                <color rgba="0.5 0.0 0.2 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+        </collision>
+
+        <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>
+
+    </link>
+
+    <gazebo reference="rueda_derecha">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <link name="rueda_izquierda">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+            <material name="color_rueda_izquierda">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+        </collision>
+        <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
+    </link>
+
+    <gazebo reference="rueda_izquierda">
+        <material>Gazebo/Turquoise</material>
+    </gazebo>
+
+    <link name="rueda_derecha_delantera">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+            <material name="color_rueda_derecha_delantera">
+                <color rgba="0.5 0.0 0.2 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+        </collision>
+        <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
+    </link>
+
+    <gazebo reference="rueda_derecha_delantera">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <link name="rueda_izquierda_delantera">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+            <material name="color_rueda_izquierda_delantera">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>        
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
+            <geometry>
+                <cylinder radius="${radio_ruedas}" length="${largo_ruedas}"/>
+            </geometry>
+        </collision>
+        <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
+    </link>
+
+    <gazebo reference="rueda_izquierda_delantera">
+        <material>Gazebo/Turquoise</material>
+    </gazebo> 
+
+
+    <joint name="rueda_izquierda_joint" type="continuous">
+        <origin xyz="${posicion_1} -${posicion_2} ${posicion_3}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_izquierda"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="rueda_derecha_joint" type="continuous">
+        <origin xyz="-${posicion_1} -${posicion_2} ${posicion_3}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_derecha"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>    
+
+    <joint name="rueda_derecha_delantera_joint" type="continuous">
+        <origin xyz="-${posicion_1} ${posicion_2} ${posicion_3}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_derecha_delantera"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="rueda_izquierda_delantera_joint" type="continuous">
+        <origin xyz="${posicion_1} ${posicion_2} ${posicion_3}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="rueda_izquierda_delantera"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <gazebo>
+        <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+            <!-- wheels -->
+            <num_wheel_pairs>2</num_wheel_pairs>
+            <left_joint>rueda_izquierda_joint</left_joint>
+            <left_joint>rueda_izquierda_delantera_joint</left_joint>
+            <right_joint>rueda_derecha_joint</right_joint>
+            <right_joint>rueda_derecha_delantera_joint</right_joint>
+
+            <!-- kinematics -->
+            <wheel_separation>0.4</wheel_separation>
+            <wheel_diameter>0.2</wheel_diameter>
+
+            <!-- limits -->
+            <max_wheel_torque>80</max_wheel_torque>
+            <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+            <command_topic>cmd_vel</command_topic>
+
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>false</publish_wheel_tf>
+
+            <odometry_topic>odom</odometry_topic>
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+        </plugin>
+    </gazebo>
+
+
+</robot>
