@@ -1,7 +1,7 @@
 # robot_diferencial-ROS
 
 ## _**REQUISITOS**_ 
-- Python
+* Python
 * ROS2 / IRON
 * RVIZ
 * Gazebo 
