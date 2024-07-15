@@ -1,5 +1,11 @@
 # robot_diferencial-ROS
 
+## REQUISITOS 
+- Python
+* ROS2 / IRON
+* RVIZ
+* Gazebo 
+
 Los paquetes utilizados para este proyecto son los siguientes: 
 ```
 sudo apt install ros-iron-xacro
