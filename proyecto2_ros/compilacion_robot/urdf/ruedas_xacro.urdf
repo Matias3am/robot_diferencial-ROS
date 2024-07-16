@@ -133,6 +133,7 @@
         <axis xyz="1.0 0.0 0.0"/>
     </joint>
 
+    <!-- Configuración de las ruedas mediante Plugins Gazebo:  xacros -->
     <gazebo>
         <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
             <!-- wheels -->
