@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- rueda derecha del robot:  xacros -->
     <link name="rueda_derecha">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -21,10 +22,12 @@
 
     </link>
 
+    <!-- Skin rueda derecha del robot:  xacros -->
     <gazebo reference="rueda_derecha">
         <material>Gazebo/Orange</material>
     </gazebo>
 
+    <!-- rueda izquierda del robot:  xacros -->
     <link name="rueda_izquierda">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -44,10 +47,12 @@
         <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
     </link>
 
+    <!-- Skin rueda derecha del robot:  xacros -->
     <gazebo reference="rueda_izquierda">
         <material>Gazebo/Turquoise</material>
     </gazebo>
 
+    <!-- rueda derecha delantera del robot:  xacros -->
     <link name="rueda_derecha_delantera">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -67,10 +72,12 @@
         <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
     </link>
 
+    <!-- Skin rueda derecha delantera del robot:  xacros -->
     <gazebo reference="rueda_derecha_delantera">
         <material>Gazebo/Orange</material>
     </gazebo>
 
+    <!-- rueda izquierda delantera del robot:  xacros -->
     <link name="rueda_izquierda_delantera">
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 ${pi/2} 0.0"/>
@@ -90,10 +97,13 @@
         <xacro:cylinder_inertia m="0.5" r="${radio_ruedas}" h="${largo_ruedas}"/>    
     </link>
 
+    <!-- Skin rueda izquierda delantera del robot:  xacros -->
     <gazebo reference="rueda_izquierda_delantera">
         <material>Gazebo/Turquoise</material>
     </gazebo> 
 
+
+    <!-- Joints de las ruedas del robot:  xacros -->
 
     <joint name="rueda_izquierda_joint" type="continuous">
         <origin xyz="${posicion_1} -${posicion_2} ${posicion_3}" rpy="0.0 0.0 0.0"/>
