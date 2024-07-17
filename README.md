@@ -10,9 +10,10 @@ Profesor: Sebastián Guajardo
 ![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-43-10.png)
 
 # Aclaración 
-```
-En un principio estaba la intención de hacer un robot diferencial de 2 ruedas + 1 axuliar junto con un griper en algun frente, pero no pudimos ejecutar bien el asunto del griper asi que cambiamos el modelo a un diferencial de 4 ruedas + camara y sensor lidar
-```
+
+En un principio estaba la intención de hacer un robot diferencial de 2 ruedas + 1 auxiliar junto con un griper en algun frente,
+pero no pudimos ejecutar bien el asunto del griper asi que cambiamos el modelo a un diferencial de 4 ruedas + camara y sensor lidar
+
 
 ## _**REQUISITOS MÍNIMOS GENERALES**_ 
 * Python
