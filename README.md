@@ -72,7 +72,7 @@ y en el mapa se pueden observar las estructuras detectadas por el sensor lidar:
 ![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-45-21.png)
 
 # **_Teleoperación_**
-Llegados a este punto lo único que quedaria pendiente es el poder controlar el movimiento del robot, para eso se necesitan ejecutar estos 2 comandos en una ventana aparte de la que se utilizó para hechar a andar el Gazebo/Rviz: 
+Llegados a este punto lo único que quedaria pendiente es el poder controlar el movimiento del robot, para eso se necesitan ejecutar estos 2 comandos en una ventana aparte de la que se utilizó para ejecutar el Gazebo/Rviz: 
 ```
 source /opt/ros/iron/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
