@@ -2,7 +2,7 @@
 ```
 Asignatura: Programación de robots con ROS
 
-Integrantes: Matias Gonzalez Belmar, Pedro Díaz Herrera, Matias Marin
+Integrantes: Matias Gonzalez Belmar, Pedro Díaz Herrera, Matias Marin Morales
 
 Profesor: Sebastián Guajardo
 ```
