@@ -1,11 +1,5 @@
 # SIMULACIÓN DE ROBOT DIFERENCIAL 4 RUEDAS CON ROS E INTEGRACIÓN SENSOR LIDAR
-```
-Asignatura: Programación de robots con ROS
 
-Integrantes: Matias Gonzalez Belmar, Pedro Díaz Herrera, Matias Marin Morales
-
-Profesor: Sebastián Guajardo
-```
 
 ![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-43-10.png)
 
