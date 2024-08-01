@@ -1,6 +1,5 @@
 # SIMULACIÓN DE ROBOT DIFERENCIAL 4 RUEDAS CON ROS E INTEGRACIÓN SENSOR LIDAR
 
-
 ![](https://github.com/Matias3am/robot_diferencial-ROS/blob/main/proyecto2_ros/compilacion_robot/Imagenes/Imagenes/Captura%20desde%202024-07-15%2018-43-10.png)
 
 # Aclaración 
